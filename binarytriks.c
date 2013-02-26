@@ -2,7 +2,7 @@
 #define SIZE_IN_BYTE sizeof(int)
 
 /**
- *prints x in binary
+ *prints x in binary 
  * @parm x whats suposed to be printed
  *	 size number of bytes in x
  */
