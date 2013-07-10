@@ -32,7 +32,7 @@ void shiftrotate(int *x, int pos, char dir){
     aux<<=j-pos;
     value|=aux;
   }
-  else{perror("direction not valid use 'r' for right; and 'l' for left ")}
+  else{perror("direction not valid use 'r' for right; and 'l' for left ");}
   *x=value;
 }
 
