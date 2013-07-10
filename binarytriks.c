@@ -4,7 +4,6 @@
 /**
  *prints x in binary 
  * @parm x whats suposed to be printed
- *	 size number of bytes in x
  */
 void printB(int x)
 {
@@ -21,13 +20,13 @@ void printB(int x)
 
 void shiftrotate(int *x, int pos, char dir){
   int aux=*x,  j=SIZE_IN_BYTE*8, value=*x;
-  if(x=='l'||x=='L')
+  if(dir=='l'||dir=='L')
   { //shift left
     value<<=pos;
     aux>>=j-pos;
     value|=aux;    
   }
-  if(x=='r'||x=='R')
+  if(dir=='r'||dir=='R')
   {//shift right
     value>>=pos;
     aux<<=j-pos;
@@ -37,7 +36,11 @@ void shiftrotate(int *x, int pos, char dir){
   *x=value;
 }
 
-
+void xored(void){
+  
+  
+  
+}
 
 
 int main(){
