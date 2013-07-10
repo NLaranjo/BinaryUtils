@@ -20,27 +20,29 @@ void printB(int x)
 
 void shiftrotate(int *x, int pos, char dir){
   int aux=*x,  j=SIZE_IN_BYTE*8, value=*x;
-  if(dir=='l'||dir=='L')
-  { //shift left
-    value<<=pos;
-    aux>>=j-pos;
-    value|=aux;    
+  printf("direction : %c,\n",dir );
+  switch(toupper(dir)){
+    case 'L':
+      //shift left
+      value<<=pos;
+      aux>>=j-pos;
+      value|=aux;
+      break;
+    case 'R':
+      //shift right
+      value>>=pos;
+      aux<<=j-pos;
+      value|=aux;
+      break;
+    default:
+      perror("direction not valid use 'r' for right; and 'l' for left ");
+      break;
   }
-  if(dir=='r'||dir=='R')
-  {//shift right
-    value>>=pos;
-    aux<<=j-pos;
-    value|=aux;
-  }
-  else{perror("direction not valid use 'r' for right; and 'l' for left ");}
   *x=value;
+  
 }
 
-void xored(void){
-  
-  
-  
-}
+
 
 
 int main(){
@@ -48,7 +50,7 @@ int main(){
   
   printB(x);
   printf("\n");
-  shiftrotate(&x,2,'l');
+  shiftrotate(&x,2,'r');
   printB(x);
   printf("\n");
   printf("\n");
