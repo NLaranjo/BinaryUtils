@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 #define SIZE_IN_BYTE sizeof(int)
 
 /**
@@ -16,11 +17,15 @@ void printB(int x)
     tam--;
   }  
 }
-
-
-void shiftrotate(int *x, int pos, char dir){
-  int aux=*x,  j=SIZE_IN_BYTE*8, value=*x;
-  printf("direction : %c,\n",dir );
+/**
+ *rotates a value in binary
+ * @parm x whats suposed to be rotated
+ * @parm pos number of positions for rotating x
+ * @parm dir direction to rotate
+ */
+void shiftrotate(int* x, int pos, char dir){
+  int aux=*x, value=*x; 
+  int j=SIZE_IN_BYTE*8;
   switch(toupper(dir)){
     case 'L':
       //shift left
@@ -39,11 +44,19 @@ void shiftrotate(int *x, int pos, char dir){
       break;
   }
   *x=value;
+}
+/*
+void xorer(int *x, int *y, int* result ){
+  int write=*result, value1=*x,value2=*y;
+  int i=0;
+  for(i=0;i<=SIZE_IN_BYTE*8)
+  
+  
+  
+  
   
 }
-
-
-
+*/
 
 int main(){
   int x=45;
